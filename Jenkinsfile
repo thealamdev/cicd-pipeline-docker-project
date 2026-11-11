@@ -32,12 +32,24 @@ pipeline{
             emailext subject: "Build SUCCESS: ${JOB_NAME}",
                      body: "Job ${JOB_NAME} build #${BUILD_NUMBER} was successfull",
                      to: "pakhiba407@gmail.com"
+
+            slackSend(
+                channel: '#jenkins-deploy-updates',
+                message: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER} completed successfully.",
+                color: 'good'
+            )
         }
 
         failure {
             emailext subject: 'Build FAILURE: ${JOB_NAME}',
-                     body: 'Job ${JOB_NAME} build #${BUILD_NUMBER} failed.',
+                     body: "Job ${JOB_NAME} build #${BUILD_NUMBER} failed.",
                      to: "pakhiba407@gmail.com"
+
+            slackSend(
+                channel: '#jenkins-deploy-updates',
+                message: "FAILURE: ${JOB_NAME} #${BUILD_NUMBER} failed. Please check the Jenkins console output.",
+                color: 'danger'
+            )
         }
     }
 }
