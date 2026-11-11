@@ -26,7 +26,7 @@ pipeline{
             }
         }
     }
-    
+
     post {
         success {
             emailext subject: "Build SUCCESS: ${JOB_NAME}",
@@ -39,4 +39,5 @@ pipeline{
                      body: 'Job ${JOB_NAME} build #${BUILD_NUMBER} failed.',
                      to: "pakhiba407@gmail.com"
         }
+    }
 }
