@@ -26,4 +26,16 @@ pipeline{
             }
         }
     }
+    post {
+        success {
+            emailext subject: "Build SUCCESS: ${JOB_NAME}",
+                     body: "Job ${JOB_NAME} build #${BUILD_NUMBER} was successfull",
+                     to: "pakhiba407@gmail.com"
+        }
+
+        success {
+            emailext subject: 'Build FAILURE: ${JOB_NAME}',
+                     body: 'Job ${JOB_NAME} build #${BUILD_NUMBER} failed.',
+                     to: "pakhiba407@gmail.com"
+        }
 }
