@@ -11,7 +11,7 @@ pipeline{
         stage("build"){
             steps {
                 script {
-                    echo "=== build the image ==="
+                    echo "=== build the image lastest version ==="
                     sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
             }
