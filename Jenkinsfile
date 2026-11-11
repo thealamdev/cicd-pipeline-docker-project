@@ -34,7 +34,7 @@ pipeline{
                      to: "pakhiba407@gmail.com"
         }
 
-        success {
+        failure {
             emailext subject: 'Build FAILURE: ${JOB_NAME}',
                      body: 'Job ${JOB_NAME} build #${BUILD_NUMBER} failed.',
                      to: "pakhiba407@gmail.com"
