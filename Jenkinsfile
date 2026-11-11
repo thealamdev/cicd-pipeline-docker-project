@@ -1,6 +1,6 @@
 pipeline{
-    agent: any
-    
+    agent any
+
     environment {
         IMAGE_NAME = "thealamdev/my-app"
         IMAGE_TAG = "latest"
