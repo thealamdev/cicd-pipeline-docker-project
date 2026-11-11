@@ -4,6 +4,7 @@ pipeline{
     environment {
         IMAGE_NAME = "thealamdev/my-app"
         IMAGE_TAG = "latest"
+        PATH = "/usr/local/bin:/opt/homebrew/bin:${env.PATH}"
     }
 
     stages {
