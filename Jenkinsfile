@@ -34,7 +34,7 @@ pipeline{
                      to: "pakhiba407@gmail.com"
 
             slackSend(
-                channel: '#jenkins-deploy-updates',
+                channel: '#jenkins-devloy-updates',
                 message: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER} completed successfully.",
                 color: "good"
             )
@@ -46,7 +46,7 @@ pipeline{
                      to: "pakhiba407@gmail.com"
 
             slackSend(
-                channel: "#jenkins-deploy-updates",
+                channel: "#jenkins-devloy-updates",
                 message: "FAILURE: ${JOB_NAME} #${BUILD_NUMBER} failed. Please check the Jenkins console output.",
                 color: "danger"
             )
