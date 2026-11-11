@@ -1,7 +1,9 @@
 pipeline{
+    agent: any
+    
     environment {
-        IMAGE_NAME: '/thealamdev/my-app'
-        IMAGE_TAG: 'latest'
+        IMAGE_NAME = "thealamdev/my-app"
+        IMAGE_TAG = "latest"
     }
 
     stages {
