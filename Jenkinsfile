@@ -26,6 +26,7 @@ pipeline{
             }
         }
     }
+    
     post {
         success {
             emailext subject: "Build SUCCESS: ${JOB_NAME}",
