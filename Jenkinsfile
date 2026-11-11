@@ -36,7 +36,7 @@ pipeline{
             slackSend(
                 channel: '#jenkins-deploy-updates',
                 message: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER} completed successfully.",
-                color: 'good'
+                color: "good"
             )
         }
 
